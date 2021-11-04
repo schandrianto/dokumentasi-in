@@ -1,15 +1,13 @@
 import React from 'react';
-
 import { Navbar, Nav, NavItem } from 'reactstrap';
-
-import SourceLink from 'components/SourceLink';
+import "../../styles/_footer.scss"
 
 const Footer = () => {
   return (
-    <Navbar>
-      <Nav navbar>
+    <Navbar className="footer-background">
+      <Nav navbar className="nav-footer" style={{padding:"0"}}>
         <NavItem>
-          2018 Reduction theme, source on <SourceLink>Github</SourceLink>
+          Copyright @2021 Make your project documentation better using dokumentasi-in.
         </NavItem>
       </Nav>
     </Navbar>

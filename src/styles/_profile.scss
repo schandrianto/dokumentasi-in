@@ -1,0 +1,248 @@
+.grid-vProfile{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-row-gap: 30px;
+}
+
+.grid-eProfile{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 30px;
+}
+
+.circle-shadow{
+    width:150px;height:150px;
+  border: solid 1px rgb(156, 24, 24);
+  //background-color: #eed;
+  box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0px 20px  rgba(233, 233, 233, 0.6);
+  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  border-radius:100px;
+}
+
+#name{
+    font-family: 'Balsamiq Sans', cursive;
+    padding-top: 15px;
+}
+
+#gridRole-eProfile{
+    grid-column: 2/4;
+}
+
+.gridPhoto-eProfile{
+    grid-row: 1/3;
+    margin: auto;
+}
+
+.grid-vProfile > :nth-child(even){
+    padding-left: 50px;
+}
+
+// .grid-eProfile > :nth-child(2){
+//     justify-items: left;
+//     padding
+// }
+
+.grid-link-vProfile{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: left;
+    grid-gap: 30px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.grid-vProfile > div:nth-child(1){
+    background: rgb(61,90,128);
+    background: linear-gradient(0deg, rgba(61,90,128,1) 0%, rgba(152,193,217,1) 100%);
+    padding-top: 30px;
+    padding-bottom: 20px;
+    opacity: 0.9;
+}
+
+.img-vProfile{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#div-img{
+    width: 15vw;
+    height: 15vw;
+    overflow: hidden;
+    margin: auto;
+}
+
+#div-imgEditProfile{
+    width: 15vw;
+    height: 15vw;
+    overflow: hidden;
+    // border-color: rgba(216, 202, 202);
+    // box-shadow: 10px -10px  rgba(0,0,0,0.6);
+    // -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+    // -webkit-box-shadow: 0px 20px  rgba(216, 202, 202, 0.6);
+    // -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+    // border-radius:100px;
+    //box-shadow: 0 0 0 12px #dfe7fd94;
+    box-shadow:0 40px 20px -4px rgba(0, 0, 0, 0.2), inset 0 -50px 20px -20px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+#cont-vProfile{
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(133, 127, 127, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 60%;
+    padding: 0;
+}
+
+#cont-eProfile{
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(133, 127, 127, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 60%;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.link-vProfile{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(247, 243, 243);
+    border-radius: 5px;
+}
+
+.link-vProfile:hover{
+    color: black;
+    background-color: #d8e2dc;
+    border-radius: 5px;
+}
+
+.icon-vProfile{
+    color: black;
+}
+
+.btn-editProfile{
+    margin-top: 100px;
+}
+
+.cont-avatar {
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+  
+.outer {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 200px !important; /* any size */
+    max-height: 200px !important; /* any size */
+    margin: auto;
+    background-color: gray;
+    border-radius: 100%;
+    position: relative;
+    box-shadow:0 40px 20px -4px rgba(0, 0, 0, 0.2), inset 0 -50px 20px -20px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+    
+.inner {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+  
+.btn-changeProfile{
+  border-radius: 200px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-color: rgb(248, 241, 241);
+}
+
+@media (max-width: 600px){
+    #cont-vProfile{
+        width: 100%;
+    }
+
+    #cont-eProfile{
+        width: 100%;
+        padding: 5px;
+    }
+
+    #div-img{
+        width: 30vw;
+        height: 30vw;
+    }
+
+    #div-imgEditProfile{
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .grid-eProfile{
+        grid-column-gap: 5px;
+        grid-row-gap: 15px;
+    }
+
+    .grid-vProfile > :nth-child(even){
+        padding-left: 5px;
+    }
+
+    .grid-link-vProfile {
+        padding-right: 5px;
+    }
+
+    #btn-changeProfile{
+        margin: 0;
+    }
+
+}
+
+@media(max-width:1000px){
+    .btn-editProfile{
+        margin-top: 50px;
+    }
+}
+
+@media(max-width:800px){
+    .inner{
+        width: 20px;
+        height: 30px;
+    }
+
+    .cont-avatar{
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+}
+
+@media(max-width:280px){
+    .inner{
+        width: 10px;
+        height: 20px;
+    }
+
+    .cont-avatar{
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    .btn-changeProfile{
+        width: 20px;
+        height: 20px;
+    }
+
+    #icon-add{
+        font-size: 12pt;
+    }
+}

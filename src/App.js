@@ -1,61 +1,56 @@
-import { STATE_LOGIN, STATE_SIGNUP } from 'components/AuthForm';
-import GAListener from 'components/GAListener';
-import { EmptyLayout, LayoutRoute, MainLayout } from 'components/Layout';
-import PageSpinner from 'components/PageSpinner';
-import AuthPage from 'pages/AuthPage';
-import React from 'react';
-import componentQueries from 'react-component-queries';
+import './App.css';
+import Login from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
+import ViewProfile from './components/ViewProfile';
+import EditProfile from './components/EditProfile';
+import Bookmark from './components/Bookmarks';
+import { STATE_LOGIN } from './components/Login';
+import { STATE_SIGNUP } from './components/Register';
+import GAListener from './components/GAListener';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import './styles/reduction.scss';
-
-const AlertPage = React.lazy(() => import('pages/AlertPage'));
-const AuthModalPage = React.lazy(() => import('pages/AuthModalPage'));
-const BadgePage = React.lazy(() => import('pages/BadgePage'));
-const ButtonGroupPage = React.lazy(() => import('pages/ButtonGroupPage'));
-const ButtonPage = React.lazy(() => import('pages/ButtonPage'));
-const CardPage = React.lazy(() => import('pages/CardPage'));
-const ChartPage = React.lazy(() => import('pages/ChartPage'));
-const DashboardPage = React.lazy(() => import('pages/DashboardPage'));
-const DropdownPage = React.lazy(() => import('pages/DropdownPage'));
-const FormPage = React.lazy(() => import('pages/FormPage'));
-const InputGroupPage = React.lazy(() => import('pages/InputGroupPage'));
-const ModalPage = React.lazy(() => import('pages/ModalPage'));
-const ProgressPage = React.lazy(() => import('pages/ProgressPage'));
-const TablePage = React.lazy(() => import('pages/TablePage'));
-const TypographyPage = React.lazy(() => import('pages/TypographyPage'));
-const WidgetPage = React.lazy(() => import('pages/WidgetPage'));
+import React from 'react';
+import MainLayout from './components/Layout/MainLayout';
+//import AuthPage from './pages/AuthPage';
+import EmptyLayout from './components/Layout/EmptyLayout';
+import LayoutRoute from './components/Layout/LayoutRoute';
+import PageSpinner from './components/PageSpinner';
+import Setting from './components/Settings';
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split('/').pop()}`;
 };
 
-class App extends React.Component {
-  render() {
-    return (
+class App extends React.Component{
+  render(){
+    return(
       <BrowserRouter basename={getBasename()}>
         <GAListener>
           <Switch>
             <LayoutRoute
-              exact
-              path="/login"
-              layout={EmptyLayout}
-              component={props => (
-                <AuthPage {...props} authState={STATE_LOGIN} />
-              )}
-            />
-            <LayoutRoute
-              exact
-              path="/signup"
-              layout={EmptyLayout}
-              component={props => (
-                <AuthPage {...props} authState={STATE_SIGNUP} />
-              )}
-            />
-
-            <MainLayout breakpoint={this.props.breakpoint}>
-              <React.Suspense fallback={<PageSpinner />}>
-                <Route exact path="/" component={DashboardPage} />
-                <Route exact path="/login-modal" component={AuthModalPage} />
+                exact
+                path="/"
+                layout={EmptyLayout}
+                component={props => (
+                  <Login {...props} authState={STATE_LOGIN} />
+                )}
+             />
+             <LayoutRoute
+                exact
+                path="/register"
+                layout={EmptyLayout}
+                component={props => (
+                  <Register {...props} authState={STATE_SIGNUP} />
+                )}
+             />
+             <MainLayout breakpoint={this.props.breakpoint}>
+              <React.Suspense fallback={<PageSpinner/>}>
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/bookmark" component={Bookmark} />
+                <Route exact path="/viewprofile" component={ViewProfile} />
+                <Route exact path="/editprofile" component={EditProfile} />
+                <Route exact path="/setting" component={Setting} />
+                {/* <Route exact path="/login-modal" component={AuthModalPage} />
                 <Route exact path="/buttons" component={ButtonPage} />
                 <Route exact path="/cards" component={CardPage} />
                 <Route exact path="/widgets" component={WidgetPage} />
@@ -73,39 +68,15 @@ class App extends React.Component {
                 <Route exact path="/modals" component={ModalPage} />
                 <Route exact path="/forms" component={FormPage} />
                 <Route exact path="/input-groups" component={InputGroupPage} />
-                <Route exact path="/charts" component={ChartPage} />
+                <Route exact path="/charts" component={ChartPage} /> */}
               </React.Suspense>
             </MainLayout>
-            <Redirect to="/" />
+             <Redirect to="/" />
           </Switch>
         </GAListener>
       </BrowserRouter>
-    );
+    )
   }
 }
 
-const query = ({ width }) => {
-  if (width < 575) {
-    return { breakpoint: 'xs' };
-  }
-
-  if (576 < width && width < 767) {
-    return { breakpoint: 'sm' };
-  }
-
-  if (768 < width && width < 991) {
-    return { breakpoint: 'md' };
-  }
-
-  if (992 < width && width < 1199) {
-    return { breakpoint: 'lg' };
-  }
-
-  if (width > 1200) {
-    return { breakpoint: 'xl' };
-  }
-
-  return { breakpoint: 'xs' };
-};
-
-export default componentQueries(query)(App);
+export default App;

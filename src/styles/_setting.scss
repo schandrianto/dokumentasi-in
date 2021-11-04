@@ -1,0 +1,157 @@
+.grid-setting{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid-onecolumn{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.grid-user{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+
+.search-user{
+    color: black;
+    border: 1px solid #ffb4a2;
+    border-radius: 100px;
+    height: 30px;
+}
+
+.search-user:focus{
+    border: none;
+    outline: 0;
+    outline-offset: 2px;
+    outline-color: #ffb4a2;
+    //box-shadow: 0 0 5px 5px #f5cac3;
+    box-shadow: 0 0 0 0.25rem RGB(226 149 120 / 50%);
+}
+
+.grid-roles{
+    max-height: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    border: 2px solid #e2dfdd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    overflow-y: scroll;
+}
+
+.grid-userTable{
+    max-height: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    border: 2px solid #fde1d0;
+    border-radius: 5px;
+    background-color: #fff9f5;
+    overflow-y: scroll;
+}
+
+.grid-roles > div:nth-child(even)
+{
+    background-color: #e2ece9;
+}
+
+.grid-roles > div:hover
+{
+    background-color: #83c5be;
+}
+
+.grid-roles > div:nth-child(1):hover
+{
+    background-color: white;
+}
+
+
+.grid-userTable > div:nth-child(even)
+{
+    background-color: #f4f1de;
+}
+
+.grid-userTable > div:hover
+{
+    background-color: #ddbea9;
+}
+
+.grid-userTable > div:nth-child(1):hover
+{
+    background-color: white;
+}
+
+.grid-border{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 0;
+}
+
+.grid-border > p{
+    //border: 1px solid #fff1e6;
+    margin: 0;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.title{
+    font-weight: bold;
+    text-align: center;
+}
+
+.icon-addRole{
+    color: white;
+}
+
+.grid-buttonAdd{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 14pt;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.btn-role{
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: #006d77;
+    border: none;
+}
+
+.btn-role:hover{
+    background-color: #0a8691;
+    border-color: #0a8691;
+    background: #0a8691 !important;
+}
+
+.btn-role:focus{
+    background-color: #006d77;
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
+}
+
+.btn-user{
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: #db6e51;
+    border: none;
+}
+
+.btn-user:hover{
+    background-color: #db755a;
+    border-color: #db755a;
+    background: #db755a !important;
+}
+
+.btn-user:focus{
+    background-color: #db6e51;
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
+}

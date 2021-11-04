@@ -1,0 +1,53 @@
+.footer-background{
+    background: rgb(30,60,91);
+    background: radial-gradient(circle, rgba(30,60,91,1) 0%, rgba(73,123,164,1) 100%);
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    bottom: 0; 
+}
+
+.nav-footer{
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+
+.grid-sosmed{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.img-sosmed{
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.grid-footer{
+    display: grid;
+    padding: 0;
+    text-align: center;
+    color: rgb(216, 208, 208);
+    font-family: 'Balsamiq Sans', cursive;
+    grid-gap: 5px;
+}
+
+.btn-sosmed{
+    background-color: rgba(252, 252, 252, 0);
+    border-color: rgba(252, 252, 252, 0);
+    width: 50%;
+}
+
+.btn-sosmed:hover{
+    background-color: rgba(250, 245, 245, 0);
+    border-color: rgba(250, 245, 245, 0);
+}
+
+.btn-sosmed:focus{
+    background-color: rgba(250, 245, 245, 0);
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
+    border-color: rgba(250, 245, 245, 0);
+}
