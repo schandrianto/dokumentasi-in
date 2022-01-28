@@ -1,4 +1,4 @@
-module dokumentasi-in/back-end
+module dokumentasi-in
 
 go 1.17
 

@@ -1,7 +1,7 @@
 package models
 
 import (
-	"dokumentasi-in/back-end/database"
+	"dokumentasi-in/database"
 )
 
 type User struct {

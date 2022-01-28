@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"dokumentasi-in/back-end/database"
-	"dokumentasi-in/back-end/models"
+	"dokumentasi-in/database"
+	"dokumentasi-in/models"
 	"fmt"
 	"net/http"
 	"strconv"

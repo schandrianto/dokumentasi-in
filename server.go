@@ -1,8 +1,8 @@
 package main
 
 import (
-	"dokumentasi-in/back-end/database"
-	"dokumentasi-in/back-end/routes"
+	"dokumentasi-in/database"
+	"dokumentasi-in/routes"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"

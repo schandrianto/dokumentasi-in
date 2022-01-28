@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"dokumentasi-in/back-end/controllers"
+	"dokumentasi-in/controllers"
 
 	"github.com/labstack/echo/v4"
 )
