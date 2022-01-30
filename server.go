@@ -6,6 +6,8 @@ import (
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
+	"github.com/gorilla/sessions"
+	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -40,6 +42,7 @@ func main() {
 	//Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+	e.Use(session.Middleware(sessions.NewCookieStore([]byte("secret"))))
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins:     []string{"*"},
 		AllowMethods:     []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},

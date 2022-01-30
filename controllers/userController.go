@@ -9,6 +9,8 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt"
+	"github.com/gorilla/sessions"
+	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
 )
 
@@ -88,6 +90,17 @@ func Login(c echo.Context) error {
 	cookie.Expires = time.Now().Add(time.Hour * 24) // 1 day
 	cookie.HttpOnly = true
 	c.SetCookie(cookie)
+
+	//Set Session
+	sess, _ := session.Get("session", c)
+	sess.Options = &sessions.Options{
+		Path:     "/",
+		MaxAge:   86400 * 7,
+		HttpOnly: true,
+	}
+	sess.Values["username"] = user.Username
+	sess.Values["fullname"] = user.Fullname
+	sess.Save(c.Request(), c.Response())
 
 	return c.JSON(http.StatusOK, response)
 }
